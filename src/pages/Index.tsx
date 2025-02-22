@@ -2,10 +2,13 @@
 import { FeaturedEvents } from "@/components/FeaturedEvents";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search } from "lucide-react";
+import { Search, User } from "lucide-react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Hero Section */}
@@ -25,6 +28,17 @@ const Index = () => {
           transition={{ duration: 0.8 }}
           className="container relative z-10 text-center text-white"
         >
+          <div className="absolute top-4 right-4">
+            <Button
+              variant="ghost"
+              className="text-white hover:bg-white/20"
+              onClick={() => navigate('/profile')}
+            >
+              <User className="mr-2 h-4 w-4" />
+              Profile
+            </Button>
+          </div>
+
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Discover Your Next Tech Event
           </h1>
