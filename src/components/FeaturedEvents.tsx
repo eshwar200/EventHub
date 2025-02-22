@@ -2,6 +2,7 @@
 import { EventCard } from "./EventCard";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const FEATURED_EVENTS = [
   {
@@ -37,9 +38,10 @@ const FEATURED_EVENTS = [
 ];
 
 export const FeaturedEvents = () => {
+  const navigate = useNavigate();
+
   const handleViewDetails = (eventId: number) => {
-    console.log("View details for event:", eventId);
-    // TODO: Implement navigation to event details page
+    navigate(`/event/${eventId}`);
   };
 
   return (
