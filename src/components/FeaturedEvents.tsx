@@ -1,6 +1,7 @@
 
 import { EventCard } from "./EventCard";
 import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
 
 const FEATURED_EVENTS = [
   {
